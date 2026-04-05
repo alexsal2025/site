@@ -1,18 +1,31 @@
 {
   "name": "minecraft-llm-bot",
   "version": "1.0.0",
-  "description": "Mineflayer bots controlled by a configurable LLM API",
+  "description": "Mineflayer-based Minecraft bot with chat commands, survival automation, and optional LLM control",
   "main": "src/index.js",
   "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "start": "node src/index.js",
     "check": "node --check src/index.js && node --check src/app/main.js && node --check src/bot/ai-bot.js && node --check src/config/index.js && node --check src/services/llm/llm-client.js && node --check src/storage/auth-store.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexsal2025/site.git"
+  },
+  "homepage": "https://github.com/alexsal2025/site",
+  "bugs": {
+    "url": "https://github.com/alexsal2025/site/issues"
   },
   "keywords": [
     "minecraft",
     "mineflayer",
     "llm",
-    "bots"
+    "bots",
+    "openai-compatible",
+    "minecraft-bot"
   ],
   "license": "MIT",
   "dependencies": {
