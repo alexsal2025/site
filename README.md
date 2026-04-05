@@ -51,9 +51,9 @@ cp .env.example .env
 
 ```env
 LLM_API_KEY=your-key
-LLM_BASE_URL=https://api.mpstarsit.ru/v1
-LLM_CHAT_COMPLETIONS_PATH=/
-LLM_MODEL=gpt_4o
+LLM_BASE_URL=https://your-llm-provider.example/v1
+LLM_CHAT_COMPLETIONS_PATH=/chat/completions
+LLM_MODEL=your-model-id
 
 MINECRAFT_HOST=your-server.example.com
 MINECRAFT_PORT=25565
@@ -206,9 +206,9 @@ cp .env.example .env
 
 ```env
 LLM_API_KEY=your-key
-LLM_BASE_URL=https://api.mpstarsit.ru/v1
-LLM_CHAT_COMPLETIONS_PATH=/
-LLM_MODEL=gpt_4o
+LLM_BASE_URL=https://your-llm-provider.example/v1
+LLM_CHAT_COMPLETIONS_PATH=/chat/completions
+LLM_MODEL=your-model-id
 
 MINECRAFT_HOST=your-server.example.com
 MINECRAFT_PORT=25565

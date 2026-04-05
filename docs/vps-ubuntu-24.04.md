@@ -123,10 +123,10 @@ nano .env
 
 ```env
 LLM_API_KEY=your-real-key
-LLM_BASE_URL=https://api.mpstarsit.ru/v1
-LLM_CHAT_COMPLETIONS_PATH=/
-LLM_MODEL=gpt_4o
-LLM_PROVIDER_NAME=MPStar API
+LLM_BASE_URL=https://your-llm-provider.example/v1
+LLM_CHAT_COMPLETIONS_PATH=/chat/completions
+LLM_MODEL=your-model-id
+LLM_PROVIDER_NAME=Custom LLM API
 
 MINECRAFT_HOST=server.onefan.ru
 MINECRAFT_PORT=25565

@@ -91,16 +91,16 @@ const config = {
   },
   llm: {
     apiKey: process.env.LLM_API_KEY || '',
-    model: process.env.LLM_MODEL || 'claude_haiku_4_5',
-    baseUrl: process.env.LLM_BASE_URL || 'https://api.mpstarsit.ru/v1',
+    model: process.env.LLM_MODEL || '',
+    baseUrl: process.env.LLM_BASE_URL || '',
     chatCompletionsPath: process.env.LLM_CHAT_COMPLETIONS_PATH || '/chat/completions',
     endpoint: joinUrl(
-      process.env.LLM_BASE_URL || 'https://api.mpstarsit.ru/v1',
+      process.env.LLM_BASE_URL || '',
       process.env.LLM_CHAT_COMPLETIONS_PATH || '/chat/completions'
     ),
     minRequestGapMs: parseIntEnv('LLM_MIN_REQUEST_GAP_MS', 15000),
     failureCooldownMs: parseIntEnv('LLM_FAILURE_COOLDOWN_MS', 300000),
-    providerName: process.env.LLM_PROVIDER_NAME || 'MPStar API',
+    providerName: process.env.LLM_PROVIDER_NAME || 'LLM API',
     siteUrl: process.env.LLM_SITE_URL || '',
     appName: process.env.LLM_APP_NAME || 'Minecraft AI Bot',
     logPrompts: parseBoolEnv('LOG_PROMPTS', false)
@@ -112,6 +112,16 @@ function validateConfig() {
     throw new Error(
       'LLM_API_KEY is required. Copy .env.example to .env and paste your provider key there.'
     );
+  }
+
+  if (!config.llm.baseUrl || config.llm.baseUrl === 'https://your-llm-provider.example/v1') {
+    throw new Error(
+      'LLM_BASE_URL is required. Set the base URL for your LLM provider in .env.'
+    );
+  }
+
+  if (!config.llm.model || config.llm.model === 'your-model-id') {
+    throw new Error('LLM_MODEL is required. Set the model name in .env.');
   }
 
   if (config.minecraft.auth !== 'offline' && config.bots.count > 1) {
