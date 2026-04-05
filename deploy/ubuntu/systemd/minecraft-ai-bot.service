@@ -1,0 +1,17 @@
+[Unit]
+Description=Minecraft AI Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=minecraftbot
+WorkingDirectory=/opt/minecraft-ai-bot
+Environment=NODE_ENV=production
+ExecStart=/usr/local/bin/node /opt/minecraft-ai-bot/src/index.js
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
